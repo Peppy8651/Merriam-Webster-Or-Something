@@ -1,42 +1,51 @@
-module.exports = class {
+module.exports = class Results {
 	constructor(fetchedResults) {
+		/**
+		 * @type {Word[]}
+		 * @description Entry in items Array may be undefined or null.
+		*/
+		this.items = fetchedResults;
+	}
+};
+// eslint-disable-next-line no-unused-vars
+class Word {
+	constructor() {
 		this.meta = {
 			/** @type {String}*/
-			id: fetchedResults.meta.id || undefined,
+			id: undefined,
 			/** @type {String} */
-			uuid: fetchedResults.meta.uuid || undefined,
+			uuid: undefined,
 			/** @type {String} */
-			sort: fetchedResults.meta.sort || undefined,
+			sort: undefined,
 			/** @type {String} */
-			src: fetchedResults.meta.src || undefined,
+			src: undefined,
 			/** @type {String} */
-			section: fetchedResults.meta.section || undefined,
+			section: undefined,
 			/** @type {String[]} */
-			stems: fetchedResults.meta.stems || undefined,
+			stems: undefined,
 			/** @type {Boolean} */
-			offensive: fetchedResults.meta.offensive || null,
+			offensive: undefined,
 		} || null;
 		/** @type {Number} */
-		this.hom = fetchedResults.hom || undefined;
+		this.hom = undefined;
 		this.hwi = {
 			/** @type {string} */
-			hw: fetchedResults.hwi.hw || undefined,
+			hw: undefined,
 			/**
 			 * @type {pr[]}
 			*/
-			prs:  fetchedResults.hwi.prs || undefined,
+			prs:  undefined,
 		};
 		/**
 		 * @type {ahws[]}
 		 */
-		this.ahws = fetchedResults.ahws;
+		this.ahws = undefined;
 		/** @type {vr[]} */
-		this.vrs = fetchedResults.vrs;
+		this.vrs = undefined;
 		/** @type {String} */
-		this.fl = fetchedResults.fl;
+		this.fl = undefined;
 	}
-};
-
+}
 // eslint-disable-next-line no-unused-vars
 class ahws {
 	constructor() {

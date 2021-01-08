@@ -11,6 +11,8 @@ module.exports = class {
 	}
 	/**
 	 * @param {string} Word
+	 * @returns {Promise<Results>}
+	 * @description Returns null if unable to get any results
 	 */
 	async get(Word) {
 		const url = `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${Word}?key=${this.token}`;
